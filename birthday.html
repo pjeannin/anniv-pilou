@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bro !</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background-color: #fff8f0; color: #333; }
+        header { background-color: #fff; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 10; }
+        header nav a { margin: 0 10px; text-decoration: none; color: #333; }
+        header button { background-color: #d2691e; color: #fff; border: none; padding: 10px 20px; cursor: pointer; }
+        .hero { background: url('https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_0056-min.jpeg') center/cover no-repeat; padding: 150px 40px 100px; color: #fff; text-align: center; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .hero h1 { font-size: 48px; margin: 0; }
+        .hero p { font-size: 20px; max-width: 800px; margin: 20px auto; }
+        section { padding: 60px 40px; max-width: 1000px; margin: 0 auto; }
+        h2 {text-align: center}
+        .cards { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .card { background-color: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); flex: 1 1 250px; padding: 20px; }
+        .highlight { color: #d2691e; }
+        .memory-block { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center; margin-top: 20px; }
+        .carousel-container { position: relative; flex: 1 1 400px; max-width: 500px; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background-color: #000; }
+        .carousel-img { width: 100%; height: 100%; object-fit: cover; display: none; }
+        .carousel-img.active { display: block; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: #fff; border: none; padding: 10px; cursor: pointer; font-size: 20px; }
+        .carousel-btn.left { left: 10px; }
+        .carousel-btn.right { right: 10px; }
+        #kiss, #gift { display: none; background-color: #ffe0b2; padding: 60px 40px; text-align: center; }
+        #kiss h2, #gift h2 { font-size: 36px; color: #d2691e; }
+        footer { background-color: #fff; text-align: center; padding: 20px; border-top: 1px solid #ddd; font-size: 14px; }
+    </style>
+</head>
+<body>
+<header>
+    <div><strong>Pilou</strong></div>
+    <nav>
+        <a href="#about">Qui c'est Pilou</a>
+        <a href="#memories">T bo</a>
+    </nav>
+    <button id="revealButton">Recevoir un bisou</button>
+</header>
+
+<section class="hero">
+    <h1>Happy Birthday Bro !</h1>
+    <p>J'ai fait mon meilleur cadeau à l'aide de mes connaissances !</p>
+</section>
+
+<section id="about">
+    <h2>Qui c'est <span class="highlight">Pilou</span></h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Un garçon rigolo</h3>
+            <p>Toujours avec la bonne blague (parfois limite mais c'est ça qui est drôle)</p>
+        </div>
+        <div class="card">
+            <h3>Un grand coeur</h3>
+            <p>Toujours là pour aider les copains</p>
+        </div>
+        <div class="card">
+            <h3>Un homme avec 28 vies</h3>
+            <p>Ça serait trop long de les lister mais le mec a tout fait 🤯</p>
+        </div>
+    </div>
+</section>
+
+<section id="memories">
+    <h2>T <span class="highlight">Bo</span></h2>
+    <div class="memory-block">
+        <div class="card">
+            <p>On a fait plein de trucs alors j'ai eu l'occasion de prendre quelques photos sympas</p>
+        </div>
+        <div class="carousel-container">
+            <button class="carousel-btn left" onclick="prevImage()">&#10094;</button>
+            <img class="carousel-img active" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_1404-min.jpeg" alt="Souvenir 1">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/DSC07715-min.JPG" alt="Souvenir 2">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/ESS-D1-6-min.jpg" alt="Souvenir 2">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_0064-min.JPG" alt="Souvenir 2">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_0209-min.jpeg" alt="Souvenir 2">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_0278-min.jpeg" alt="Souvenir 2">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_0703-min.jpeg" alt="Souvenir 2">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_1671-min.jpeg" alt="Souvenir 2">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_3324-min.jpeg" alt="Souvenir 2">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_7285-min.jpeg" alt="Souvenir 2">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_7633-min.jpeg" alt="Souvenir 2">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_7892-min.jpeg" alt="Souvenir 2">
+            <img class="carousel-img" src="https://raw.githubusercontent.com/pjeannin/anniv-pilou/refs/heads/main/IMG_9862-min.jpeg" alt="Souvenir 2">
+            <button class="carousel-btn right" onclick="nextImage()">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+<section id="kiss">
+    <h2>💋 Bisou virtuel rien que pour toi 💋</h2>
+    <p>Parce que tu le mérites. Bon anniversaire copain ❤️ !</p>
+</section>
+
+<section id="gift">
+    <h2>🎁 Ton vrai cadeau : Une place de concert ! 🎶</h2>
+    <p>Prépare-toi pour une soirée inoubliable au concert de métal de ton choix ! Bon anniversaire Pilou !</p>
+    <p>J'aurais bien pris les places à l'avance mais je connais pas assez les groupes qui te font kiffer ! alors on va voir le concert que tu veux. Donne-moi le nom et je prends nos places !</p>
+</section>
+
+<footer>
+    &copy; 2025 Bon Anniversaire Pilou. Tous droits réservés.
+</footer>
+
+<script>
+    let step = 0;
+    document.getElementById('revealButton').addEventListener('click', function() {
+        if (step === 0) {
+            document.getElementById('kiss').style.display = 'block';
+            document.getElementById('kiss').scrollIntoView({ behavior: 'smooth' });
+            this.textContent = 'Voir le vrai cadeau';
+            step++;
+        } else if (step === 1) {
+            document.getElementById('gift').style.display = 'block';
+            document.getElementById('gift').scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-img');
+
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+</script>
+</body>
+</html>
